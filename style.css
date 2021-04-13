@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+:root{
+    --main-color: #272057;
+    --main-color-lighter: #393072;
+}
+
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background: var(--main-color);
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+    color: white;
+}
+
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.hidden{
+    display: none !important;
+}
+
+.logo{
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.logo span{
+    font-weight: 200;
+    font-size: 1.9rem;
+    border-bottom: 2px solid white;
+    margin-right: 10px;
+}
+
+.logo span:last-child{
+    margin-right: 0;
+}
+
+.flex-center-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.flex-center-column{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.game{
+    height: calc(100vh - 100px);
+}
+
+.game > div:first-child{
+    height: 100%;
+}
+
+.hangman{
+    width: 100px;
+    height: 220px;
+    border-left: 4px solid white;
+    border-top: 4px solid white;
+    position: relative;
+    margin-right: 80px;
+}
+
+.hangman > span{
+    display: inline-block;
+    position: absolute;
+    background: white;
+}
+
+.rope, #rope{
+    width: 2px;
+    height: 30px;
+    right: 20px;
+    top: 0;
+}
+
+.head, #head{
+    width: 35px;
+    height: 35px;
+    right: 5px;
+    top: 30px;
+    border-radius: 50%;
+    background: transparent !important;
+    border: 4px solid white;
+}
+
+.body, #body{
+    width: 4px;
+    height: 50px;
+    right: 20px;
+    top: 65px;
+}
+
+.left-arm, #left-arm{
+    width: 27px;
+    height: 4px;
+    right: 21px;
+    top: 85px;
+    transform: rotateZ(-30deg);
+}
+
+.right-arm, #right-arm{
+    width: 27px;
+    height: 4px;
+    right: -4px;
+    top: 85px;
+    transform: rotateZ(210deg);
+}
+
+.left-leg, #left-leg{
+    width: 27px;
+    height: 4px;
+    right: 16px;
+    top: 124px;
+    transform: rotateZ(-60deg);
+}
+
+.right-leg, #right-leg{
+    width: 27px;
+    height: 4px;
+    right: 1px;
+    top: 124px;
+    transform: rotateZ(240deg);
+}
+
+.menu{
+    list-style: none;
+}
+
+.menu li{
+    margin-bottom: 35px;
+    font-weight: 200;
+    font-size: 1.6rem;
+    padding: 5px 15px;
+    text-align: center;
+}
+
+.menu li:last-child{
+    margin-bottom: 0;
+}
+
+.menu li:hover{
+    cursor: pointer;
+    background: var(--main-color-lighter);
+}
+
+.stats{
+    width: 100%;
+}
+
+table{
+    border-collapse: collapse;
+    width: 600px;
+    font-weight: 200;
+    font-size: 1.4rem;
+}
+
+th {
+    padding: 10px;
+    text-align: center;
+    font-weight: 300;
+    border-bottom: 1px solid white;
+}
+
+td{
+    text-align: center;
+    border-bottom: 1px solid white;
+    padding: 5px;
+}
+
+.go-back{
+    font-weight: 200;
+    font-size: 1.4rem;
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+.go-back::before{
+    content: "\276C";
+    margin-right: 10px;
+    font-size: 1.4rem;
+}
+
+.options{
+    font-weight: 200;
+}
+
+.option{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.option:last-child{
+    margin-bottom: 0;
+}
+
+.options label{
+    font-size: 1.7rem;
+    margin-right: 10px;
+}
+
+.option select{
+    padding: 10px;
+    outline: none;
+    color: #333;
+    border-radius: 3px;
+    width: fit-content;
+    font-size: 1.1rem;
+}
+
+input{
+    display: inline-block;
+    width: 300px;
+    height: 38px;
+    color: #333;
+    margin-bottom: 20px;
+    border: 1px solid #333;
+    outline: none;
+    padding: 3px 10px;
+    font-size: 1rem;
+}
+
+input::placeholder{
+    color: #ccc;
+}
+
+label{
+    font-weight: 200;
+    font-size: 1.4rem;
+}
+
+.secret-word{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.secret-word span{
+    margin-right: 5px;
+    font-weight: 200;
+    padding-bottom: 5px;
+    border-bottom: 2px solid white;
+    min-width: 20px;
+    font-size: 1.6rem;
+}
+
+.secret-word span:last-child{
+    margin-right: 0;
+}
+
+.mistakes{
+    font-weight: 200;
+    font-size: 1.6rem;
+    margin-top: 50px;
+}
+
+.mistakes span{
+    margin-right: 5px;
+}
+
+.mistakes span:last-child{
+    margin-right: 5px;
+}
+
+.game-ended-message{
+    font-weight: 200;
+    font-size: 1.4rem;
+}
+
+.game-ended-message p{
+    text-align: center;
+}
+
+.game-ended-message p:first-child{
+    margin-bottom: 10px;
+}
+
+.buttons{
+    margin-top: 50px;
+}
+
+.buttons > span{
+    font-weight: 200;
+    font-size: 1.4rem;
+    margin-top: 0 !important;
+    cursor: pointer;
+}
+
+.buttons span:first-child{
+    margin-right: 50px;
+}

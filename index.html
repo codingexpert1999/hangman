@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Hangman</title>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <span>H</span>
+            <span>A</span>
+            <span>N</span>
+            <span>G</span>
+            <span>M</span>
+            <span>A</span>
+            <span>N</span>
+        </div>
+
+        <div class="game flex-center-column">
+
+            <div class="flex-center-row" id="menu-screen">
+
+                <div class="hangman">
+                    <span class="rope"></span>
+                    <span class="head"></span>
+                    <span class="body"></span>
+                    <span class="left-arm"></span>
+                    <span class="right-arm"></span>
+                    <span class="left-leg"></span>
+                    <span class="right-leg"></span>
+                </div>
+
+                <ul class="menu">
+                    <li id="start-game-button">Start Game</li>
+                    <li id="show-stats-button">My Stats</li>
+                    <li id="show-options-button">Options</li>
+                </ul>
+            </div>
+
+
+            <div class="flex-center-column hidden" id="stats-screen">
+                <div class="stats">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Game ID</th>
+                                <th>Mistakes</th>
+                                <th>Tries</th>
+                                <th>Secret Word</th>
+                                <th>Game Won</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+
+                <span class="go-back">GO BACK</span>
+            </div>
+
+            <div class="flex-center-column hidden" id="options-screen">
+                <div class="options">
+                    <div class="option">
+                        <label>Difficulty :</label>
+                        <select id="difficulty">
+                            <option value="easy">Easy</option>
+                            <option value="hard">Hard</option>
+                            <option value="very-hard">Very Hard</option>
+                        </select>
+                    </div>
+
+                    <div class="option">
+                        <label>Theme :</label>
+                        <select id="theme">
+                            <option value="blue">Blue</option>
+                            <option value="dark">Dark</option>
+                            <option value="purple">Purple</option>
+                            <option value="red">Red</option>
+                        </select>
+                    </div>
+                </div>
+
+                <span class="go-back">GO BACK</span>
+            </div>
+
+            <form class="flex-center-column hidden" id="secret-word-form">
+                <input type="password" placeholder="Enter a secret word...">
+                <label>Press Enter if you done or Esc to Cancel</label>
+            </form>
+
+            <div class="hidden" id="game-screen">
+
+                <div class="flex-center-column">
+
+                    <div class="flex-center-row">
+                        <div class="hangman">
+                            <span id="rope"></span>
+                            <span class="hidden" id="head"></span>
+                            <span class="hidden" id="body"></span>
+                            <span class="hidden" id="left-arm"></span>
+                            <span class="hidden" id="right-arm"></span>
+                            <span class="hidden" id="left-leg"></span>
+                            <span class="hidden" id="right-leg"></span>
+                        </div>
+
+                        <div class="secret-word">
+                        </div>
+
+                        <div class="game-ended-message hidden">
+                            <p id="win-status"></p>
+                            <p id="reveal-word"></p>
+                        </div>
+                    </div>
+
+                    <div class="mistakes">
+                    </div>
+
+                    <div class="buttons hidden">
+                        <span>PLAY AGAIN</span>
+                        <span class="go-back">GO BACK</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="js/options.js"></script>
+    <script src="js/stats.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/form.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>
